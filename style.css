@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Karla", sans-serif;
+  outline: 1px dashed red;
+}
+
+:root {
+  /* Colors */
+
+  /* Primary */
+
+  --Cyan: hsl(179, 62%, 43%);
+  --Bright-Yellow: hsl(71, 73%, 54%);
+
+  /* Neutral */
+
+  --Light-Gray: hsl(204, 43%, 93%);
+  --Grayish-Blue: hsl(218, 22%, 67%);
+
+  /* Weights: 400, 700 */
+  --Weight-4: 400;
+  --Weight-7: 700;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--Light-Gray);
+}
+/* Main section */
+
+.single-price {
+  max-width: 45rem;
+  display: grid;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 2px 4px 80px rgb(204, 204, 204);
+  grid-template-areas:
+    "join join"
+    "monthly why";
+}
+
+/* Grid: position and background color of each section */
+section:first-child {
+  grid-area: join;
+  background-color: white;
+}
+
+section:nth-child(2) {
+  grid-area: monthly;
+  background-color: var(--Cyan);
+}
+
+section:nth-child(3) {
+  grid-area: why;
+  background-color: hsla(179, 62%, 43%, 0.822);
+}
+section {
+  width: 100%;
+  padding: 2rem;
+}
+
+/* Join Section */
+
+.join-heading {
+  width: 100%;
+  font-size: 1.85rem;
+  color: var(--Cyan);
+  font-weight: var(--Weight-7);
+}
+
+.join-title {
+  width: 100%;
+  margin-top: 1.5rem;
+  font-size: 1.35rem;
+  font-weight: var(--Weight-7);
+  color: var(--Bright-Yellow);
+}
+
+.join-paragraph {
+  max-width: 88%;
+  font-size: 1rem;
+  margin-top: 1rem;
+  line-height: 1.5rem;
+  color: var(--Grayish-Blue);
+}
+
+/* monthly Section */
+.monthly-title {
+  font-size: 1.5 rem;
+  font-weight: var(--Weight-7);
+  color: var(--Light-Gray);
+}
+
+.monthly-money {
+  font-size: 1rem;
+  display: flex;
+  column-gap: 0.5rem;
+  align-items: center;
+  margin-top: 1.5rem;
+  color: var(--Light-Gray);
+  & span {
+    font-size: 2rem;
+    font-weight: var(--Weight-7);
+    color: var(--Light-Gray);
+  }
+}
+
+.monthly-statment {
+  margin-top: 0.85rem;
+  font-weight: var(--Weight-4);
+  color: var(--Light-Gray);
+}
+
+.btn {
+  margin-top: 1.85rem;
+  width: 100%;
+  font-size: 1rem;
+  border: none;
+  padding: 1rem;
+  color: var(--Light-Gray);
+  font-weight: var(--Weight-7);
+  text-decoration: none;
+  border-radius: 0.5rem;
+  background-color: var(--Bright-Yellow);
+  box-shadow: 2px 4px 20px rgba(0, 0, 0, 0.158);
+}
+
+/* Why Section */
+.why-title {
+  font-size: 1rem;
+  font-weight: var(--Weight-7);
+  color: var(--Light-Gray);
+}
+
+.why-paragraphy {
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  line-height: 1.25rem;
+  font-weight: var(--Weight-4);
+  color: var(--Light-Gray);
+}
+
+/* Mobile View */
+@media screen and (max-width: 40rem) {
+  .single-price {
+    display: flex;
+    flex-direction: column;
+    margin: 4rem 2rem;
+  }
+
+  section {
+    grid-area: unset;
+  }
+
+  .join-heading {
+    font-size: 1.25rem;
+  }
+
+  .join-title {
+    font-size: 1rem;
+  }
+
+  .join-paragraph {
+    max-width: 100%;
+    font-size: 1rem;
+  }
+
+  .why-paragraphy {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+  }
+}
